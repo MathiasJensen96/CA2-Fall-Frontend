@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { SERVER_GENDERIZE_URL } from "../Settings";
 
 
 function Genderize (props){
@@ -17,7 +18,7 @@ function Genderize (props){
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`https://api.genderize.io/?name=` + name)
+    fetch(`{https://api.genderize.io/?name=}` + name)
       .then(res => res.json())
       .then(data => {
         console.log(data)

@@ -23,30 +23,30 @@ const changeName = (event) => {
     setLogin(initialState)
   }
 
-  window.onload=function(){
-    document.getElementById("addUser-btn").addEventListener('click', e => {
-      addUser()
-    })
-  }
+  // window.onload=function(){
+  //   document.getElementById("addUser-btn").addEventListener('click', e => {
+  //     addUser()
+  //   })
+  // }
 
-  function addUser() {
+  // function addUser() {
 
-    const userObject = {
-        userName: document.getElementById("newUserName").value,
-        userPass: document.getElementById("newUserPass").value
-    }
-    console.log(userObject);
+  //   const userObject = {
+  //       userName: document.getElementById("newUserName").value,
+  //       userPass: document.getElementById("newUserPass").value
+  //   }
+  //   console.log(userObject);
   
     
-    const options = facade.makeOptions('POST', userObject)
+  //   const options = facade.makeOptions('POST', userObject)
   
-    fetch(`http://localhost:8080/CA2_Fall_Backend/api/info`, options)
-    .then(handleHttpErrors)
-    .then(data => {
-      setLogin(initialState)
-    })
-    .catch(errorHandling)
-  }
+  //   fetch(`http://localhost:8080/CA2_Fall_Backend/api/info`, options)
+  //   .then(handleHttpErrors)
+  //   .then(data => {
+  //     setLogin(initialState)
+  //   })
+  //   .catch(errorHandling)
+  // }
 
     return (
         <div class="text-center">
@@ -69,26 +69,9 @@ const changeName = (event) => {
             <button class="btn btn-primary" onClick={logout}>Logout</button>}
             <p>Role: {facade.getUserRoles()}</p>
           </form>
-      
-          {/* <div>
-            <h2>Create New User</h2>
-            <label>
-              User Name:
-              <br/>
-              <input id="newUserName" type="text" name="userName" value={login.username} onChange={changeName}/>
-              <br/>
-              Password:
-              <br/>
-              <input id="newUserPass" type="text" name="userPass" value={login.password} onChange={changeName}/>
-              <br/>
-              <br/>
-              <button id="addUser-btn" type="button" class="btn btn-primary">Add User</button>
-            </label>
-          </div> */}
         </div>
       );
 }
-
 
 
 //Helper functions
